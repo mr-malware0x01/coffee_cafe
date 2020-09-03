@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+    <!-- on scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css">
+    <!-- on scroll -->
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Resturant</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+i {
+	margin-right: 10px;
+}
+/*----------multi-level-accordian-menu------------*/
+.navbar-logo{
+	padding: 15px;
+	color: #fff;
+}
+.navbar-mainbg{
+	background-color: rgba(0, 0, 0, 0.644);
+	padding: 0px;
+}
+#navbarSupportedContent{
+	overflow: hidden;
+	position: relative;
+}
+#navbarSupportedContent ul{
+	padding: 0px;
+	margin: 0px;
+}
+#navbarSupportedContent ul li a i{
+	margin-right: 10px;
+}
+#navbarSupportedContent li {
+	list-style-type: none;
+	float: left;
+}
+#navbarSupportedContent ul li a{
+	color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 20px 20px;
+    transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+#navbarSupportedContent>ul>li.active>a{
+	color: #c39a64;
+	background-color: transparent;
+	transition: all 0.7s;
+}
+#navbarSupportedContent a:not(:only-child):after {
+	content: "\f105";
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	font-size: 14px;
+	font-family: "Font Awesome 5 Free";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+	transition: 0.5s;
+}
+#navbarSupportedContent .active>a:not(:only-child):after {
+	transform: rotate(90deg);
+}
+.hori-selector{
+	display:inline-block;
+	position:absolute;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background-color: rgba(255, 255, 255, 0.815);
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	margin-top: 10px;
+}
+.hori-selector .right,
+.hori-selector .left{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background-color: transparent;
+	bottom: 10px;
+}
+.hori-selector .right{
+	right: -25px;
+}
+.hori-selector .left{
+	left: -25px;
+}
+.hori-selector .right:before,
+.hori-selector .left:before{
+	content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border:none;
+    border-radius: 50%;
+    background-color:transparent;
+}
+.hori-selector .right:before{
+	bottom: 0;
+    right: -25px;
+}
+.hori-selector .left:before{
+	bottom: 0;
+    left: -25px;
+}
+
+
+
+
+@media (max-width: 600px)
+{
+    
+	#navbarSupportedContent ul li a{
+		padding: 12px 30px;
+	}
+	.hori-selector{
+		margin-top: 0px;
+		margin-left: 10px;
+		border-radius: 0;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
+	}
+	.hori-selector .left,
+	.hori-selector .right{
+		right: 10px;
+	}
+	.hori-selector .left{
+		top: -25px;
+		left: auto;
+	}
+	.hori-selector .right{
+		bottom: -25px;
+	}
+	.hori-selector .left:before{
+		left: -25px;
+		top: -25px;
+	}
+	.hori-selector .right:before{
+		bottom: -25px;
+		left: -25px;
+    }
+    @media (min-width: 600px){
+        nav{
+            display: none !important;
+        }
+    }
+}
+</style>
+<body>
+    
+    <div class="home">
+        <div class="homeu">
+            <section data-aos="fade-down" id="laptop">
+                <div class="nav">
+                    <div class="logo">
+                        <img src="./image/logo.png" alt="">
+                    </div>
+                    <div class="navlinks">
+                        <a id="Active" href="">HOME</a>
+                        <a href="">HOME</a>
+                        <a href="">HOME</a>
+                        <a href="">HOME</a>
+                        <a href="">HOME</a>
+                        <a href="">HOME</a>
+                        <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </section>
+            <nav data-aos="fade-down" class="navbar navbar-expand-lg navbar-mainbg">
+                <a class="navbar-brand navbar-logo" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>HOME</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>HOME</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div data-aos="fade-up" class="homeh" aos-duration="3000" >
+                <div class="homecontent">
+                    <div class="heading">Welcome</div>
+                    <div><h1>THE BEST COFFEE TESTING EXPERIENCE</h1></div>
+                    <div><p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p></div>
+                    <div class="links">
+                        <a href="">ORDER NOW</a>
+                        <a href="">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="book">
+        <div class="info">
+            <h4><i class="fa fa-phone" aria-hidden="true"></i>(123)4567890</h4>
+            <p>A small river named Duden flows by their place and supplies.</p>
+        </div>
+        <div class="info">
+            <h4><i class="fa fa-phone" aria-hidden="true"></i>(123)4567890</h4>
+            <p>A small river named Duden flows by their place and supplies.</p>
+        </div>
+        <div class="info">
+            <h4><i class="fa fa-phone" aria-hidden="true"></i>(123)4567890</h4>
+            <p>A small river named Duden flows by their place and supplies.</p>
+        </div>
+        <div class="booktable">
+            <h4>BOOK A TABLE</h4>
+            <div class="one" style="width: 100%;">
+                <input type="text" placeholder="NAME" name="" id="fullname">
+                <input type="text" placeholder="NAME" name="" id="">
+            </div>
+            <div class="sec">
+                <input type="text" name="" placeholder="DATE" id="">
+                <input type="text" name="" placeholder="TIME" id="">
+                <input type="text" name="" placeholder="PHONE" id="">
+            </div>
+            <div class="three">
+                <textarea wrap="soft" name="" id="" cols="15" placeholder="MESSAGE" rows="3"></textarea>
+                <input id="book" type="submit" value="APPOINTMENT">
+            </div>
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="story">
+            <div data-aos="fade-in" class="left"><img src="./image/about.jpg" alt=""></div>
+            <div data-aos="fade-in" class="right">
+                <div class="content">
+                    <div class="heading">
+                        <div class="heading1">Discover</div>
+                        <h1>OUR STORY</h1>
+                    </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas doloribus, id tempore quasi odit consequuntur perspiciatis nulla perferendis dolorum optio, ut debitis exercitationem. Consequatur, autem quibusdam ipsum tempore repellat itaque exercitationem atque error suscipit, explicabo quia tenetur illum omnis in ducimus voluptatibus? Odit obcaecati laborum, exercitationem dolor, explicabo reiciendis laboriosam architecto temporibus, commodi impedit earum repudiandae hic! Consequatur, at cumque.</p>
+                </div>
+            </div>
+        </div>
+        <div class="quantity">
+            <div class="fich">
+               <img src="./image/coffee-beans.svg" alt="">
+               <h4>QUALITY COFFEE</h4>
+               <div class="p">
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolorum sunt enim corporis, facilis incidunt in veniam ab maxime eaque!</p>
+               </div>
+            </div>
+            <div class="fich">
+                <img src="./image/coffee-beans.svg" alt="">
+                <h4>QUALITY COFFEE</h4>
+                <div class="p">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolorum sunt enim corporis, facilis incidunt in veniam ab maxime eaque!</p>
+                </div>
+            </div>
+            <div class="fich">
+                <img src="./image/coffee-beans.svg" alt="">
+                <h4>QUALITY COFFEE</h4>
+                <div class="p">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolorum sunt enim corporis, facilis incidunt in veniam ab maxime eaque!</p>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div data-aos="slide-up" class="left">
+                <div class="con">
+                    <div class="heading">
+                        <div class="heading1">Discover</div>
+                        <h1>OUR MENU</h1>
+                    </div>
+                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                    <div class="links">
+                        <a href="">VIEW FULL MENU</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div data-aos="slide-up" class="right">
+                <div class="first">
+                    <div style="" class="img"><img src="./image/menu-1.jpg" alt=""></div>
+                    <div id="image2" class="img"><img src="./image/menu-2.jpg" alt=""></div>
+                </div>
+                <div class="second">
+                    <div style="" class="img"><img src="./image/menu-3.jpg" alt=""></div>
+                    <div id="" class="img"><img src="./image/menu-4.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="happy" data-stellar-background-ratio="0.1">
+            <div class="overlay">
+                <div class="row1">
+                    <div class="col1">
+                        <img src="./image/coffee-cup.svg" alt="">
+                        <h1>500</h1>
+                        <h4>Customers</h4>
+                    </div>
+                    <div class="col1">
+                        <img src="./image/coffee-cup.svg" alt="">
+                        <h1>500</h1>
+                        <h4>Customers</h4>
+                    </div>
+                    <div class="col1">
+                        <img src="./image/coffee-cup.svg" alt="">
+                        <h1>500</h1>
+                        <h4>Customers</h4>
+                    </div>
+                    <div class="col1">
+                        <img src="./image/coffee-cup.svg" alt="">
+                        <h1>500</h1>
+                        <h4>Customers</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sell">
+            <div class="contents">
+                <div class="heading">
+                    <div class="heading1">Discover</div>
+                    <h1>OUR PRODUCTS</h1>
+                </div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</p>
+            </div>
+            <div class="addtocart">
+                <div class="pro">
+                    <div class="img"><img src="./image/menu-1.jpg" alt=""></div>
+                    <div class="proinfo">
+                        <h4>COFFEE CAPUCCINO</h4>
+                        <p>A small river named Duden flows by their place and supplies</p>
+                        <h4>$4.95</h4>
+                        <a href="">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="pro">
+                    <div class="img"><img src="./image/menu-2.jpg" alt=""></div>
+                    <div class="proinfo">
+                        <h4>COFFEE CAPUCCINO</h4>
+                        <p>A small river named Duden flows by their place and supplies</p>
+                        <h4>$4.95</h4>
+                        <a href="">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="pro">
+                    <div class="img"><img src="./image/menu-3.jpg" alt=""></div>
+                    <div class="proinfo">
+                        <h4>COFFEE CAPUCCINO</h4>
+                        <p>A small river named Duden flows by their place and supplies</p>
+                        <h4>$4.95</h4>
+                        <a href="">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="pro">
+                    <div class="img"><img src="./image/menu-4.jpg" alt=""></div>
+                    <div class="proinfo">
+                        <h4>COFFEE CAPUCCINO</h4>
+                        <p>A small river named Duden flows by their place and supplies</p>
+                        <h4>$4.95</h4>
+                        <a href="">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="img"><img src="./image/gallery-1.jpg" alt=""></div>
+            <div class="img"><img src="./image/gallery-2.jpg" alt=""></div>
+            <div class="img"><img src="./image/gallery-3.jpg" alt=""></div>
+            <div class="img"><img src="./image/gallery-4.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <footer style="border: none;">
+        <div class="onef">
+            <div class="heading">ABOUT US</div>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        </div>
+        <div class="twof">
+            <div class="heading">RECENT BLOG</div>
+            <div class="blog">
+                <div class="img">
+                    <img src="./image/image_1.jpg" alt="">
+                </div>
+                <div class="contentf">
+                    <p>Even the all-powerful Pointing has no control about</p>
+                    <div class="po">
+                        <a href=""><i class="fa fa-calendar" aria-hidden="true"></i>Sept 15,2018</a>
+                        <a href=""><i class="fa fa-user" aria-hidden="true"></i>Admin</a>
+                        <a href=""><i class="fa fa-comments" aria-hidden="true"></i>17</a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog">
+                <div class="img">
+                    <img src="./image/image_2.jpg" alt="">
+                </div>
+                <div class="contentf">
+                    <p>Even the all-powerful Pointing has no control about</p>
+                    <div class="po">
+                        <a href=""><i class="fa fa-calendar" aria-hidden="true"></i>Sept 15,2018</a>
+                        <a href=""><i class="fa fa-user" aria-hidden="true"></i>Admin</a>
+                        <a href=""><i class="fa fa-comments" aria-hidden="true"></i>17</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="threef">
+            <div class="heading">SERVICES</div>
+            <p>Cooked</p>
+            <p>Deliver</p>
+            <p>Quality Foods</p>
+            <p>Mixed</p>
+        </div>
+        <div class="fourf">
+            <div class="heading">HAVE A QUESTIONS?</div>
+            <p><i class="fa fa-location-arrow" aria-hidden="true"></i>	203 Fake St. Mountain View, San Francisco, California, USA</p>
+            <p><i class="fa fa-phone" aria-hidden="true"></i>+91 8489778942</p>
+            <p><i class="fa fa-envelope" aria-hidden="true"></i>labkalab@gmail.com</p>
+        </div>
+    </footer>
+    <div style="border: none; background-color: black; display: flex; width: 100%; height: 80px;justify-content: center; align-items: center; " class="cop"><p  style="color: #c39a64 !important; margin: 0;">Devloped by <span style="color: red;"> ❤ </span>Vedant & Saransh Jain</p></div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        // ---------Responsive-navbar-active-animation-----------
+function test(){
+  var tabsNewAnim = $('#navbarSupportedContent');
+  var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+  var activeItemNewAnim = tabsNewAnim.find('.active');
+  var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+  var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+  var itemPosNewAnimTop = activeItemNewAnim.position();
+  var itemPosNewAnimLeft = activeItemNewAnim.position();
+  $(".hori-selector").css({
+    "top":itemPosNewAnimTop.top + "px", 
+    "left":itemPosNewAnimLeft.left + "px",
+    "height": activeWidthNewAnimHeight + "px",
+    "width": activeWidthNewAnimWidth + "px"
+  });
+  $("#navbarSupportedContent").on("click","li",function(e){
+    $('#navbarSupportedContent ul li').removeClass("active");
+    $(this).addClass('active');
+    var activeWidthNewAnimHeight = $(this).innerHeight();
+    var activeWidthNewAnimWidth = $(this).innerWidth();
+    var itemPosNewAnimTop = $(this).position();
+    var itemPosNewAnimLeft = $(this).position();
+    $(".hori-selector").css({
+      "top":itemPosNewAnimTop.top + "px", 
+      "left":itemPosNewAnimLeft.left + "px",
+      "height": activeWidthNewAnimHeight + "px",
+      "width": activeWidthNewAnimWidth + "px"
+    });
+  });
+}
+$(document).ready(function(){
+  setTimeout(function(){ test(); });
+});
+$(window).on('resize', function(){
+  setTimeout(function(){ test(); }, 500);
+});
+$(".navbar-toggler").click(function(){
+  setTimeout(function(){ test(); });
+});
+    </script>
+    <!-- on scroll -->
+    <script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration:2000,
+})
+    </script>
+    <!-- on scroll -->
+</body>
+</html>
